@@ -68,21 +68,29 @@ namespace ListsInWinForms
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean((Int32)IstNumbers.SelectedItem))
+            if (IstNumbers.SelectedIndex != -1)
             {
-                numbers.Remove((Int32)IstNumbers.SelectedItem);
+                numbers.RemoveAt(IstNumbers.SelectedIndex);
+                lblStatus.Text = "Status: item removed";
+                IstNumbers.DataSource = null;
+                IstNumbers.DataSource = numbers;
             }
             else
             {
-                lblStatus.Text = "Status: No number selected";
+                lblStatus.Text = "Status: no item selected";
             }
-            
-            
 
+        }
+
+        private void btnRemoveAllNumbers_Click(object sender, EventArgs e)
+        {
+            int itemsRemoved = 0;
+            for (int i = numbers.Count -1; i >= 0; i--)
+                numbers.RemoveAt(i);
+                itemsRemoved += 1;     
             IstNumbers.DataSource = null;
             IstNumbers.DataSource = numbers;
-            lblStatus.Text = "Status: removed number";
-
+            lblStatus.Text = $"{itemsRemoved} Items were removed";           
         }
     }
 }

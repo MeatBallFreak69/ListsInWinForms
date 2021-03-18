@@ -153,6 +153,7 @@ namespace ListsInWinForms
             this.btnRemoveAllNumbers.TabIndex = 10;
             this.btnRemoveAllNumbers.Text = "Remove All";
             this.btnRemoveAllNumbers.UseVisualStyleBackColor = true;
+            this.btnRemoveAllNumbers.Click += new System.EventHandler(this.btnRemoveAllNumbers_Click);
             // 
             // lblStatus
             // 
