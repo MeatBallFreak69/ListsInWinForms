@@ -51,12 +51,28 @@ namespace ListsInWinForms
             numbers.Clear();
             for (int i = 0; i < 20; i++)
                 numbers.Add(generator.Next(100));
+            IstNumbers.DataSource = null;
             IstNumbers.DataSource = numbers;
+            lblStatus.Text = "Status: new numbers list";
         }
 
         private void btnNewHeroes_Click(object sender, EventArgs e)
         {
             heroes.Clear();
+            heroes.Add("Superman");
+            heroes.Add("Batman");
+            IstHeroes.DataSource = null;
+            IstHeroes.DataSource = heroes;
+            lblStatus.Text = "Status: new heroes list";
+        }
+
+        private void btnRemoveNumber_Click(object sender, EventArgs e)
+        {
+            numbers.Remove((Int32)IstNumbers.SelectedItem);
+            IstNumbers.DataSource = null;
+            IstNumbers.DataSource = numbers;
+            lblStatus.Text = "Status: removed number";
+
         }
     }
 }
