@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListsInWinForms", "ListsInWinForms\ListsInWinForms.csproj", "{762DDAEE-814E-48CD-BABF-339DC1477A60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{762DDAEE-814E-48CD-BABF-339DC1477A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762DDAEE-814E-48CD-BABF-339DC1477A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762DDAEE-814E-48CD-BABF-339DC1477A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762DDAEE-814E-48CD-BABF-339DC1477A60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A344743-3CF6-40BF-871F-AD0B8C0B2BA6}
+	EndGlobalSection
+EndGlobal
