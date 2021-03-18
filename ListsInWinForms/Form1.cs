@@ -68,7 +68,17 @@ namespace ListsInWinForms
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            numbers.Remove((Int32)IstNumbers.SelectedItem);
+            if (Convert.ToBoolean((Int32)IstNumbers.SelectedItem))
+            {
+                numbers.Remove((Int32)IstNumbers.SelectedItem);
+            }
+            else
+            {
+                lblStatus.Text = "Status: No number selected";
+            }
+            
+            
+
             IstNumbers.DataSource = null;
             IstNumbers.DataSource = numbers;
             lblStatus.Text = "Status: removed number";
