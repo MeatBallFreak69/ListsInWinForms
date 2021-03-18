@@ -103,6 +103,7 @@ namespace ListsInWinForms
             this.btnNewHeroes.TabIndex = 3;
             this.btnNewHeroes.Text = "New List";
             this.btnNewHeroes.UseVisualStyleBackColor = true;
+            this.btnNewHeroes.Click += new System.EventHandler(this.btnNewHeroes_Click);
             // 
             // lblNumbers
             // 

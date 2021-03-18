@@ -49,11 +49,14 @@ namespace ListsInWinForms
         private void btnNewNumbers_Click(object sender, EventArgs e)
         {
             numbers.Clear();
-            heroes.Clear();
-
             for (int i = 0; i < 20; i++)
                 numbers.Add(generator.Next(100));
             IstNumbers.DataSource = numbers;
+        }
+
+        private void btnNewHeroes_Click(object sender, EventArgs e)
+        {
+            heroes.Clear();
         }
     }
 }
