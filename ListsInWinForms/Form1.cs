@@ -15,6 +15,8 @@ namespace ListsInWinForms
         List<int> numbers = new List<int>();
         List<string> heroes = new List<string>();
         Random generator = new Random();
+        bool upperCase = false;
+        bool lowerCase = false;
         public frmUsingLists()
         {
             InitializeComponent();
@@ -102,6 +104,7 @@ namespace ListsInWinForms
                 IstHeroes.DataSource = null;
                 IstHeroes.DataSource = heroes;
                 lblStatus.Text = $"Status: removed {removeHero} from heroes list";
+                txtRemoveHero.Text = " ";
             }
             else
             {
@@ -117,14 +120,48 @@ namespace ListsInWinForms
             {
                 lblStatus.Text = "Status: Please enter anything other than a space";
             }
+            else if (heroes.Contains(addHero))
+            {
+                lblStatus.Text = $"Status: Please enter a new hero, you entered {addHero}";
+            }
             else
             {
                 heroes.Add(addHero);
-                lblStatus.Text = $"Status: Entered a hero named {addHero}";
+                lblStatus.Text = $"Status: Entered a hero named: {addHero}";
                 txtAddHero.Text = " ";
                 IstHeroes.DataSource = null;
                 IstHeroes.DataSource = heroes;
             }
+        }
+
+        private void btnUppercase_Click(object sender, EventArgs e)
+        {
+            upperCase = true
+            heroes = heroes.ConvertAll(d => d.ToUpper());
+            IstHeroes.DataSource = null;
+            IstHeroes.DataSource = heroes;
+
+        }
+
+        private void btnLowercase_Click(object sender, EventArgs e)
+        {
+            heroes = heroes.ConvertAll(d => d.ToLower());
+            IstHeroes.DataSource = null;
+            IstHeroes.DataSource = heroes;
+        }
+
+        private void btnSortDown_Click(object sender, EventArgs e)
+        {
+            numbers.Sort((a, b) => b.CompareTo(a));
+            IstNumbers.DataSource = null;
+            IstNumbers.DataSource = numbers;
+        }
+
+        private void btnSortHeroesDown_Click(object sender, EventArgs e)
+        {
+            heroes.Sort((a, b) => b.CompareTo(a));
+            IstHeroes.DataSource = null;
+            IstHeroes.DataSource = heroes;
         }
     }
 }
