@@ -189,6 +189,7 @@ namespace ListsInWinForms
             this.btmAddHero.TabIndex = 14;
             this.btmAddHero.Text = "Add";
             this.btmAddHero.UseVisualStyleBackColor = true;
+            this.btmAddHero.Click += new System.EventHandler(this.btmAddHero_Click);
             // 
             // lblEnterHeroNameRemove
             // 

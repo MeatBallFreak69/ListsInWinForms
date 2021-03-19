@@ -108,5 +108,23 @@ namespace ListsInWinForms
                 lblStatus.Text = "Please enter a valid hero";
             }
         }
+
+        private void btmAddHero_Click(object sender, EventArgs e)
+        {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            string addHero = txtAddHero.Text.Trim(charsToTrim);
+            if (string.IsNullOrWhiteSpace(addHero))
+            {
+                lblStatus.Text = "Status: Please enter anything other than a space";
+            }
+            else
+            {
+                heroes.Add(addHero);
+                lblStatus.Text = $"Status: Entered a hero named {addHero}";
+                txtAddHero.Text = " ";
+                IstHeroes.DataSource = null;
+                IstHeroes.DataSource = heroes;
+            }
+        }
     }
 }
