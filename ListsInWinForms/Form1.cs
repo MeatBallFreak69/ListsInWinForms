@@ -79,18 +79,34 @@ namespace ListsInWinForms
             {
                 lblStatus.Text = "Status: no item selected";
             }
-
         }
 
         private void btnRemoveAllNumbers_Click(object sender, EventArgs e)
         {
             int itemsRemoved = 0;
-            for (int i = numbers.Count -1; i >= 0; i--)
-                numbers.RemoveAt(i);
-                itemsRemoved += 1;     
+            itemsRemoved = numbers.Count;
+            for (int i = numbers.Count - 1; i >= 0; i--)
+                numbers.RemoveAt(i);          
             IstNumbers.DataSource = null;
             IstNumbers.DataSource = numbers;
             lblStatus.Text = $"{itemsRemoved} Items were removed";           
+        }
+
+        private void btnRemoveHero_Click(object sender, EventArgs e)
+        {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            string removeHero = txtRemoveHero.Text.Trim(charsToTrim);
+            if (heroes.Contains(removeHero))
+            {
+                heroes.Remove(removeHero);
+                IstHeroes.DataSource = null;
+                IstHeroes.DataSource = heroes;
+                lblStatus.Text = $"Status: removed {removeHero} from heroes list";
+            }
+            else
+            {
+                lblStatus.Text = "Please enter a valid hero";
+            }
         }
     }
 }

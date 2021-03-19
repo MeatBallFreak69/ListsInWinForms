@@ -208,6 +208,7 @@ namespace ListsInWinForms
             this.btnRemoveHero.TabIndex = 17;
             this.btnRemoveHero.Text = "Remove";
             this.btnRemoveHero.UseVisualStyleBackColor = true;
+            this.btnRemoveHero.Click += new System.EventHandler(this.btnRemoveHero_Click);
             // 
             // txtRemoveHero
             // 
