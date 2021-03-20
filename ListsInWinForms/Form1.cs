@@ -15,8 +15,6 @@ namespace ListsInWinForms
         List<int> numbers = new List<int>();
         List<string> heroes = new List<string>();
         Random generator = new Random();
-        bool upperCase = false;
-        bool lowerCase = false;
         public frmUsingLists()
         {
             InitializeComponent();
@@ -98,9 +96,9 @@ namespace ListsInWinForms
         {
             char[] charsToTrim = { '*', ' ', '\'' };
             string removeHero = txtRemoveHero.Text.Trim(charsToTrim);
-            if (heroes.Contains(removeHero))
+            if (heroes.Contains(removeHero, StringComparer.OrdinalIgnoreCase))
             {
-                heroes.Remove(removeHero);
+                heroes.RemoveAll(n => n.Equals(removeHero, StringComparison.OrdinalIgnoreCase));
                 IstHeroes.DataSource = null;
                 IstHeroes.DataSource = heroes;
                 lblStatus.Text = $"Status: removed {removeHero} from heroes list";
@@ -136,11 +134,9 @@ namespace ListsInWinForms
 
         private void btnUppercase_Click(object sender, EventArgs e)
         {
-            upperCase = true
             heroes = heroes.ConvertAll(d => d.ToUpper());
             IstHeroes.DataSource = null;
             IstHeroes.DataSource = heroes;
-
         }
 
         private void btnLowercase_Click(object sender, EventArgs e)
